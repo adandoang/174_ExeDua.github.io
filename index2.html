@@ -25,9 +25,9 @@
         footer {
             margin-top: 30px;
         }
-        /* Style untuk menampilkan input teks tambahan */
+        
         .other-song-input {
-            display: none; /* Sembunyikan input teks awalnya */
+            display: none;
         }
     </style>
 </head>
@@ -45,14 +45,25 @@
                 <input type="date" class="form-control" id="date">
             </div>
             <div class="form-group">
-                <label for="favorite-song">Favorite IVE Song:</label>
+                <label for="favorite-song">IVE Song:</label>
                 <select class="form-control" id="favorite-song" onchange="checkOtherOption(this)">
                     <option>After Like</option>
                     <option>Love Dive</option>
                     <option>Eleven</option>
-                    <option>Other</option> <!-- Tambahkan opsi "Other" di sini -->
+                    <option>Other</option>
                 </select>
                 <input type="text" class="form-control other-song-input" id="other-song" placeholder="Enter your favorite song">
+            </div>
+            <div class="form-group">
+                <label for="rate-song">Rate Song:</label>
+                <select class="form-control" id="rate-song">
+                    <option></option>
+                    <option>⭐</option>
+                    <option>⭐⭐</option>
+                    <option>⭐⭐⭐</option>
+                    <option>⭐⭐⭐⭐</option>
+                    <option>⭐⭐⭐⭐⭐</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Gender:</label>
@@ -110,7 +121,7 @@
                 otherSongInput.style.display = "block";
             } else {
                 otherSongInput.style.display = "none";
-                otherSongInput.value = ""; // Kosongkan nilai input jika opsi lain dipilih
+                otherSongInput.value = "";
             }
         }
 
@@ -125,7 +136,6 @@
             });
             var komen = document.getElementById("comments").value;
 
-            // Ambil nilai dari input judul lagu jika opsi "Other" dipilih
             if (favsong === "Other") {
                 favsong = document.getElementById("other-song").value;
             }
