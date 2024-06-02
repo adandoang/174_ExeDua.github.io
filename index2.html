@@ -129,6 +129,7 @@
             var name = document.getElementById("name").value;
             var date = document.getElementById("date").value;
             var favsong = document.getElementById("favorite-song").value;
+            var ratesong = document.getElementById("rate-song").value;
             var gender = document.querySelector("input[name=gender]:checked").value;
             var members = [];
             document.querySelectorAll("input[name=member]:checked").forEach(function(member) {
@@ -143,7 +144,8 @@
             alert(
                 "Nama : " + name +
                 "\nDate : " + date +
-                "\nFav Song : " + favsong +
+                "\nSong : " + favsong +
+                "\nRate Song: " + ratesong +
                 "\nGender : " + gender +
                 "\nFav Members: " + members.join(", ") +
                 "\nComment: " + komen
